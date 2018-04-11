@@ -1527,7 +1527,7 @@ def main():
             return 1
         # open device
         try:
-            mt = MTDevice(device, baudrate, verbose=verbose)
+            mt = MTDevice(device, baudrate, verbose=verbose, timeout=0.1, autoconf=False)
         except serial.SerialException:
             raise MTException("unable to open %s" % device)
         # execute actions
