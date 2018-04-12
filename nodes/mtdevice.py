@@ -33,6 +33,7 @@ class MTDevice(object):
             self.device = serial.Serial(port, baudrate, timeout=timeout,
                                         writeTimeout=timeout, rtscts=True,
                                         dsrdtr=True)
+        time.sleep (0.1)            # sleep to allow serial connection to be ready
         self.device.flushInput()    # flush to make sure the port is ready TODO
         self.device.flushOutput()    # flush to make sure the port is ready TODO
         # timeout for communication
